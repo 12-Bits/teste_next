@@ -4,6 +4,14 @@ import Col from 'react-bootstrap/Col';
 import './page.css';
 
 
+function Title(){
+  return(
+    <div className="Title-Container">
+      <h1 className="Title">App de Deliver</h1>
+    </div>
+  )
+}
+
 function AD(){
 
   const ADMain = 'https://img.freepik.com/fotos-premium/a-autentica-marmita-brasileira-mais-conhecida-como-marmitex-feita-com-comida-tradicional-do-brasil_496782-2496.jpg';
@@ -63,18 +71,25 @@ function Restaurantes(){
 
   return(
 <Container>
+  <h2 className="SubtituloRestaurante">Restaurantes</h2>
     <Row>
       <Col>
-<img className='ImgScrollingComida' src={imageUrl1} alt="Comida" />
+<img className='ImgScrollingRestaurante' src={imageUrl1} alt="Comida" />
+<p id="RestauranteNome">Restaurante 1</p>
+      </Col>
+      <Col>
+<img className='ImgScrollingRestaurante' src={imageUrl1} alt="Comida" />
+<p id="RestauranteNome">Restaurante 2</p>
       </Col>
             <Col>
-<img className='ImgScrollingComida' src={imageUrl1} alt="Comida" />
+<img className='ImgScrollingRestaurante' src={imageUrl1} alt="Comida" />
+<p id="RestauranteNome">Restaurante 3</p>
+
       </Col>
             <Col>
-<img className='ImgScrollingComida' src={imageUrl1} alt="Comida" />
-      </Col>
-            <Col>
-<img className='ImgScrollingComida' src={imageUrl1} alt="Comida" />
+<img className='ImgScrollingRestaurante' src={imageUrl1} alt="Comida" />
+<p id="RestauranteNome">Restaurante 4</p>
+
       </Col>
     </Row>
 </Container>
@@ -87,7 +102,7 @@ export default function Home() {
   return(
    <div className="App">
     <div>
-      <h1 id="Titulo">App de Deliver</h1>
+          <Title/>
           <AD/>
       </div>
       <div id="Comidas">
@@ -98,7 +113,6 @@ export default function Home() {
             </div>
           </div>
     <div id="Restaurante">
-      <h2 id="Subtitulo">Restaurante</h2>
       <Restaurantes/>
       <div id="RestaurantesScrolling">
 
