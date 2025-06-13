@@ -1,15 +1,24 @@
+'use client';
+
 import './page.css';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import Link from 'next/link';
 
-function Title(){
-  return(
-    <div className="Title-Container">
+function Title() {
+  return (
+    <Link href="/">
       <h1 className="Title">App de Deliver</h1>
-    </div>
-  )
+    </Link>
+  );
 }
+
+
+
+
+
+
 
 function NomeComida(){
   return(
@@ -26,11 +35,15 @@ function ComidaIMG(){
   )
 } 
 
-function BotaoCompra(){
-  return(
-  <button>
-    Comprar
-  </button>
+function BotaoCompra() {
+  function comprarComida() {
+    alert("Compra realizada com sucesso!"); // ou qualquer outra lógica
+  }
+
+  return (
+    <button onClick={comprarComida}>
+      Comprar
+    </button>
   );
 }
 
@@ -61,7 +74,8 @@ function Rest(){
 export default function Detalhes() {
   return (
     <div>
-      <Title/>
+      
+       <Title/>
 <ComidaIMG />
       <NomeComida />
 

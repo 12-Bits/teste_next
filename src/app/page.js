@@ -1,13 +1,15 @@
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import Link from 'next/link';
+
 import './page.css';
 
 
 function Title(){
   return(
     <div className="Title-Container">
-      <h1 className="Title">App de Deliver</h1>
+      <button className="MenuButton"><h1>App de Deliver</h1></button>
     </div>
   )
 }
@@ -35,14 +37,19 @@ function Comidas(){
    <Container>
     <Row>
       <Col>
+      
+       <Link href="/Detalhes">
       <div id="ComidaImg">
         <img className='ImgScrollingComida' src={imageUrl1} alt="Comida"/>
       </div>
+      </Link>
             <div id="ComidaInfo">
 
       <Row>
       <Col>
+      <Link href="/Detalhes">
       <h3 className='ComidaNome'>Comida 1</h3>
+      </Link>
       <p>R$ 50,99</p>
       <p id="PrazoEntrega">De XX a XX minutos</p>
 </Col>
@@ -61,7 +68,6 @@ function Comidas(){
   )
 }
 
-
 function Restaurantes(){
 
   const imageUrl1 = 'https://media-cdn.tripadvisor.com/media/photo-s/14/2c/db/e6/logo.jpg'; 
@@ -74,27 +80,26 @@ function Restaurantes(){
   <h2 className="SubtituloRestaurante">Restaurantes</h2>
     <Row>
       <Col>
-<img className='ImgScrollingRestaurante' src={imageUrl1} alt="Comida" />
+<img id="RestauranteIcon" className='ImgScrollingRestaurante' src={imageUrl1} alt="Comida" />
 <p id="RestauranteNome">Restaurante 1</p>
       </Col>
       <Col>
-<img className='ImgScrollingRestaurante' src={imageUrl1} alt="Comida" />
+<img id="RestauranteIcon" className='ImgScrollingRestaurante' src={imageUrl1} alt="Comida" />
 <p id="RestauranteNome">Restaurante 2</p>
       </Col>
-            <Col>
-<img className='ImgScrollingRestaurante' src={imageUrl1} alt="Comida" />
+      <Col>
+<img id="RestauranteIcon" className='ImgScrollingRestaurante' src={imageUrl1} alt="Comida" />
 <p id="RestauranteNome">Restaurante 3</p>
 
       </Col>
-            <Col>
-<img className='ImgScrollingRestaurante' src={imageUrl1} alt="Comida" />
-<p id="RestauranteNome">Restaurante 4</p>
 
-      </Col>
     </Row>
 </Container>
   )
 }
+
+
+
 
 
 
