@@ -18,12 +18,10 @@ export default function Comidas() {
     <Container>
       <h1>Recomendado</h1>
       <Row>
-        {selectedComida.slice(0, 3).map((comida, index) => (
+
           <div id="ComidaShowcase">
           <Col key={index}>
-            <Link href="/Detalhes">
               <img src={comida.image} className="ImgScrollingComida" alt={comida.name} />
-            </Link>
             <h3>{comida.name}</h3>
             <p>{"Preço: R$"+comida.price}</p>
             <div id="DeliverInfo">
@@ -33,7 +31,7 @@ export default function Comidas() {
             
           </Col>
           </div>
-        ))}
+
       </Row>
     </Container>
   );

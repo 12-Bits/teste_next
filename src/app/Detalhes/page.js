@@ -5,6 +5,7 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Link from 'next/link';
+import ComidasDetails from '@/components/ComidasDetails'
 
 function Title() {
   return (
