@@ -1,9 +1,12 @@
+'use client';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Link from 'next/link';
-
+import { useState, useEffect, use } from 'react';
 import './page.css';
+import Comidas from '@/components/Comidas';
+
 
 
 function Title(){
@@ -25,48 +28,7 @@ function AD(){
   )
 }
 
-function Comidas(){
-  const imageUrl1 = 'https://img.freepik.com/fotos-premium/a-autentica-marmita-brasileira-mais-conhecida-como-marmitex-feita-com-comida-tradicional-do-brasil_496782-2496.jpg';
-  const imageUrl2 = 'https://www.minhareceita.com.br/app/uploads/2022/12/pizza-de-pepperoni-caseira-portal-minha-receita.jpg';
-  const imageUrl3 = 'https://i.imgur.com/0UjG3wk.png';
-  const imageUrl4 = 'https://grandesnomesdapropaganda.com.br/wp-content/uploads/2019/04/Outback-e-Abbraccio.jpg';
-  return(
-    
-  <><h1>Recomendado</h1>
 
-   <Container>
-    <Row>
-      <Col>
-      
-       <Link href="/Detalhes">
-      <div id="ComidaImg">
-        <img className='ImgScrollingComida' src={imageUrl1} alt="Comida"/>
-      </div>
-      </Link>
-            <div id="ComidaInfo">
-
-      <Row>
-      <Col>
-      <Link href="/Detalhes">
-      <h3 className='ComidaNome'>Comida 1</h3>
-      </Link>
-      <p>R$ 50,99</p>
-      <p id="PrazoEntrega">De XX a XX minutos</p>
-</Col>
-      </Row>
-      </div>
-
- </Col>
-      <Col><img className='ImgScrollingComida' src={imageUrl2} alt="Comida" />
-      <h2>Comida 2</h2></Col>
-      </Row>
-    </Container>
-
-    
-    </>
-
-  )
-}
 
 function Restaurantes(){
 
@@ -102,7 +64,6 @@ function Restaurantes(){
 
 
 
-
 export default function Home() {
   return(
    <div className="App">
@@ -113,7 +74,9 @@ export default function Home() {
       <div id="Comidas">
           <div id="ComidasScrolling">
             <div id="ComidaDisplay">
-                <Comidas/>
+                    <main>
+      <Comidas />
+    </main>
 
             </div>
           </div>
