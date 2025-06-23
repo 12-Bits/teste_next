@@ -6,16 +6,20 @@ import Link from 'next/link';
 import { useState, useEffect, use } from 'react';
 import './page.css';
 import Comidas from '@/components/Comidas';
+<<<<<<< HEAD
 import Restaurantes from '@/components/Restaurantes';
+=======
+import Restaurantes from '@/components/Restaurantes'
+>>>>>>> 1996df77e2c1dc6d05ed12b600ff4e6aa216f352
 
 
 
-function Title(){
-  return(
-    <div className="Title-Container">
-      <button className="MenuButton"><h1>App de Deliver</h1></button>
-    </div>
-  )
+function Title() {
+  return (
+    <Link href="/">
+      <h1 className="Title">App de Deliver</h1>
+    </Link>
+  );
 }
 
 function AD(){
@@ -29,8 +33,11 @@ function AD(){
   )
 }
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 1996df77e2c1dc6d05ed12b600ff4e6aa216f352
 export default function Home() {
   return(
    <div className="App">

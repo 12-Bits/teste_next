@@ -3,13 +3,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Container, Row, Col } from 'react-bootstrap';
-<<<<<<< HEAD
-import { useRouter } from 'next/navigation';
-
-
-=======
 import styled from 'styled-components';
->>>>>>> 1996df77e2c1dc6d05ed12b600ff4e6aa216f352
 export default function Comidas() {
   const [selectedComida, setSelectedComida] = useState([]);
 
@@ -20,44 +14,14 @@ export default function Comidas() {
       .then((data) => setSelectedComida(data));
   }, []);
 
-const router = useRouter();
-
-  const irParaDetalhes = (id) => {
-    router.push(`/comida/${id}`);
-  };
-
   return (
-    console.log(selectedComida),
     <Container>
       <h1>Recomendado</h1>
       <Row>
-        {selectedComida.slice(0, 3).map((comida, index) => (
-<<<<<<< HEAD
-          <div className='ComidaInfo'>
-=======
+
           <div id="ComidaShowcase">
->>>>>>> 1996df77e2c1dc6d05ed12b600ff4e6aa216f352
           <Col key={index}>
-            <Link href={`/comida/${comida.id}`}>
               <img src={comida.image} className="ImgScrollingComida" alt={comida.name} />
-
-
-            <Row>
-              <Col>
-            <h3 className='ComidaName'>{comida.name}</h3>
-
-            <p>Preço: R$ {comida.price}</p>
-            </Col>
-            <Col>
-            <p>Nota: {comida.rating}</p>
-            <p>Tempo de entrega {comida.time}</p>
-            </Col>
-            </Row>
-            </Link>
-<<<<<<< HEAD
-          </Col>
-             </div>
-=======
             <h3>{comida.name}</h3>
             <p>{"Preço: R$"+comida.price}</p>
             <div id="DeliverInfo">
@@ -67,8 +31,7 @@ const router = useRouter();
             
           </Col>
           </div>
->>>>>>> 1996df77e2c1dc6d05ed12b600ff4e6aa216f352
-        ))}
+
       </Row>
     </Container>
   );
