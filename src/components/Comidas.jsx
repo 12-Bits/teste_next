@@ -29,7 +29,7 @@ const router = useRouter();
         {selectedComida.slice(0, 3).map((comida, index) => (
           <div className='ComidaInfo'>
           <Col key={index}>
-            <Link href={`/comida/${comida.id}`}>
+            <Link className='Link' href={`/comida/${comida.id}`}>
               <img src={comida.image} className="ImgScrollingComida" alt={comida.name} />
 
 

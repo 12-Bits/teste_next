@@ -1,16 +1,47 @@
-// app/comida/[id]/page.jsx
 
-export default async function DetalhesComida({ params }) {
-  const res = await fetch(`https://apifakedelivery.vercel.app/foods/${params.id}`);
-  const comida = await res.json();
 
-  return (
+'use client';
+import './page.css';
+import { Container, Row, Col } from "react-bootstrap";
+import Title from "@/components/Title";
+import { useParams } from 'next/navigation';
+import { useEffect, useState } from 'react';
+
+export default function DetalhesComida() {
+  const { id } = useParams();
+  const [comida, setComida] = useState(null);
+
+  useEffect(() => {
+    fetch(`https://apifakedelivery.vercel.app/foods/${id}`)
+      .then(res => res.json())
+      .then(data => setComida(data));
+  }, [id]);
+
+  if (!comida) return <p>Carregando...</p>;
+
+    return (
+    
     <div>
-      <h1>{comida.name}</h1>
+      <Container>
+        <Title />
       <img src={comida.image} alt={comida.name} />
+
+      <Row>
+      <Col className="ComidaDetails1">
+      <h1>{comida.name}</h1>
       <p>Preço: R$ {comida.price}</p>
+      <p>{comida.description}</p>
+
+      </Col>
+    
+      <Col className="ComidaDetails2">
+      <button className="ComprarButton" onClick={() => alert("Compra realizada com sucesso!")}>Comprar</button>
       <p>Nota: {comida.rating}</p>
       <p>Tempo de entrega: {comida.time}</p>
+      </Col>
+      </Row>
+      </Container>
     </div>
   );
 }
+

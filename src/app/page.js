@@ -7,16 +7,10 @@ import { useState, useEffect, use } from 'react';
 import './page.css';
 import Comidas from '@/components/Comidas';
 import Restaurantes from '@/components/Restaurantes';
+import Title from '@/components/Title';
 
 
 
-function Title() {
-  return (
-    <Link href="/">
-      <h1 className="Title">App de Deliver</h1>
-    </Link>
-  );
-}
 
 function AD(){
 

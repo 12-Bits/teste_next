@@ -20,7 +20,7 @@ const [selectedRestaurante, setSelectedRestaurante] = useState([]);
       <Row>
         {selectedRestaurante.slice(0, 3).map((restaurante, index) => (
           <Col key={index}>
-            <Link href="/DetalhesRestaurante">
+            <Link className='Link' href="/DetalhesRestaurante">
               <img src={restaurante.image} className="ImgScrollingRestaurante" alt={restaurante.name} />
               <p className="ImgScrollingRestauranteName">{restaurante.name}</p>
             </Link>
