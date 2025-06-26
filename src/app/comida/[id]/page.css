@@ -1,5 +1,5 @@
 body{
-    background-color: white;
+    background-color: rgba(255, 196, 0, 0.61);
     padding: 1vw;
 }
 
@@ -11,11 +11,25 @@ body{
     padding-bottom: 0%;
 }
 
+.ComprarButton{
+  font-size: 2rem;
+  background-color: red;
+  padding:1vh;
+  color:yellow;
+  border: solid;
+  border-color: yellow;
+  border-radius: 20px;
+}
+
 .row {
     width:100%;
     margin-bottom:10px;
     padding:10px;
     height: auto;
+}
+
+.SecondDivision{
+  padding-top: 5vh;
 }
 
 #Comidas{
@@ -28,13 +42,16 @@ body{
 } 
 
 .ComidaInfo{
-  background-color: aquamarine;
   margin-bottom: 5vh;
 width: 100%;
 }
 .ComidaName{
+  padding-top: 3.5vh;
   margin-bottom: 5vh;
-  font-weight: bold;
+  font-weight: bolder;
+  color:red;
+  font-size: 1.5rem;
+
 }
 
 .ImgScrollingComida{

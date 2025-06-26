@@ -28,7 +28,7 @@ export default function DetalhesComida() {
 
       <Row>
       <Col className="ComidaDetails1">
-      <h1>{comida.name}</h1>
+      <h1 className='ComidaName'>{comida.name}</h1>
       <p>Preço: R$ {comida.price}</p>
       <p>{comida.description}</p>
 
@@ -36,7 +36,9 @@ export default function DetalhesComida() {
     
       <Col className="ComidaDetails2">
       <button className="ComprarButton" onClick={() => alert("Compra realizada com sucesso!")}>Comprar</button>
-      <p>Nota: {comida.rating}</p>
+      <div className='SecondDivision'>
+      <p >Nota: {comida.rating}</p>
+      </div>
       <p>Tempo de entrega: {comida.time}</p>
       </Col>
       </Row>

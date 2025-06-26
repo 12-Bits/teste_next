@@ -1,0 +1,55 @@
+body{
+    background-color: rgba(255, 196, 0, 0.61);
+    padding: 1vw;
+}
+
+
+.container {
+    width:100%;
+    margin: 0 auto;
+    padding:10px;
+    padding-bottom: 0%;
+}
+
+.ComprarButton{
+  font-size: 2rem;
+  background-color: red;
+  padding:1vh;
+  color:yellow;
+  border: solid;
+  border-color: yellow;
+  border-radius: 20px;
+}
+
+.RestauranteIMG{
+border-style: solid;
+border-color: black;
+border-width: 5px;
+border-radius: 250px;
+  width: 200px;
+margin: auto;
+}
+.row {
+    width:100%;
+    margin-bottom:10px;
+    padding:10px;
+    height: auto;
+}
+
+.Link{
+  text-decoration: none;
+  color: black;
+}
+
+
+
+
+
+
+
+
+
+.Title{
+  text-align: center;
+  font-weight: bold;
+}

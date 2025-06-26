@@ -1,40 +1,82 @@
 body{
-    background-color: white;
+    background-color: rgba(255, 196, 0, 0.61);
     padding: 1vw;
 }
-
 
 .container {
     width:100%;
     margin: 0 auto;
-    padding:10px;
+
     padding-bottom: 0%;
 }
 
 .row {
     width:100%;
     margin-bottom:10px;
-    padding:10px;
+
     height: auto;
 }
 
+
+/*MAIN PAGE START*/
+
+.Title{
+  text-align: center;
+  font-weight: bold;
+}
+
+#Subtitulo{
+    font-size: 3vw;
+    padding-left: 5vw;
+} 
+
+.Ad-Image{
+  width: 70vh;
+  height: 20vh;
+  border-radius: 10px;
+  display: block;
+  margin: auto;
+}
+
+.Ad-container{
+  text-align: center;
+  margin: 20px;
+object-position: center;
+}   
+
+/*MAIN PAGE END*/
+
+/*COMIDA START*/
 #Comidas{
     padding-top: 10vh;
+    align-items: center;
 }
 
 .ImgScrollingComida{
     border-style: solid;
     border-radius: 5vh;
+    margin:auto
 } 
 
-.ComidaInfo{
-  background-color: aquamarine;
-  margin-bottom: 5vh;
-width: 100%;
+.ComidaContainer{
+background-color: yellow;
+margin:auto;
+margin-bottom: 5vh;
+width:auto;
 }
+
 .ComidaName{
   margin-bottom: 5vh;
+  font-weight: bolder;
+  color:red;
+  font-size: 1.5rem;
+
+}
+
+.ComidaInfo{
+  margin-top: 3vh;
   font-weight: bold;
+
 }
 
 .ImgScrollingComida{
@@ -47,12 +89,9 @@ width: 100%;
   color: black;
 }
 
+/*COMIDA END*/
 
-
-.ComidaNome{
-  font-size: 1rem;
-}
-
+/*RESTAURANTE START*/
 .ImgScrollingRestaurante{
   width: 50px;
   height: 50px;
@@ -64,48 +103,15 @@ width: 100%;
 .ImgScrollingRestauranteName{
   margin-right:1vh;
 text-align: center;
-
 }
-
-
 
 #RestauranteNome{
   font-size: 0.8rem;
   font-weight: bolder;
   text-align: center;
 }
-.Ad-Image{
-  width: 80vw;
-  height: 20vh;
-  border-radius: 10px;
-    display: block;
-  margin: auto;
-}
-.Ad-container{
-  text-align: center;
-  margin: 20px;
-object-position: center;
-
-}   
-
-
-#Titulo{
-font-size: 5vw;
-text-align: center;
-padding-bottom: 5vh;
-font-weight: bolder;
-}
-
-#Subtitulo{
-    font-size: 3vw;
-    padding-left: 5vw;
-} 
 
 .SubtituloRestaurante{
     font-size:2rem;
     padding-left: 5vw;
-}
-.Title{
-  text-align: center;
-  font-weight: bold;
 }

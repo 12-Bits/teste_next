@@ -21,20 +21,24 @@ const router = useRouter();
     router.push(`/comida/${id}`);
   };
 
+
+
+  
   return (
     console.log(selectedComida),
     <Container>
       <h1>Recomendado</h1>
-      <Row>
+      <Row >
         {selectedComida.slice(0, 3).map((comida, index) => (
-          <div className='ComidaInfo'>
+          <div  key={comida.id} className='ComidaContainer'>
           <Col key={index}>
+        
             <Link className='Link' href={`/comida/${comida.id}`}>
-              <img src={comida.image} className="ImgScrollingComida" alt={comida.name} />
-
-
+              <img src={comida.image}  className="ImgScrollingComida" alt={comida.name}/>
+            <div className='ComidaInfo'>
             <Row>
               <Col>
+              
             <h3 className='ComidaName'>{comida.name}</h3>
 
             <p>Preço: R$ {comida.price}</p>
@@ -42,11 +46,17 @@ const router = useRouter();
             <Col>
             <p>Nota: {comida.rating}</p>
             <p>Tempo de entrega {comida.time}</p>
+           
             </Col>
+           
             </Row>
-            </Link>
-          </Col>
              </div>
+            </Link>
+       
+          </Col>
+          </div>
+
+            
         ))}
       </Row>
     </Container>
