@@ -7,7 +7,7 @@ import { useRouter } from 'next/navigation';
 
 export default function Comidas() {
   const [selectedComida, setSelectedComida] = useState([]);
-
+  const router = useRouter();
 
   useEffect(() => {
     fetch("https://apifakedelivery.vercel.app/foods")
@@ -15,48 +15,37 @@ export default function Comidas() {
       .then((data) => setSelectedComida(data));
   }, []);
 
-const router = useRouter();
-
   const irParaDetalhes = (id) => {
     router.push(`/comida/${id}`);
   };
 
-
-
-  
   return (
-    console.log(selectedComida),
     <Container>
       <h1>Recomendado</h1>
-      <Row >
-        {selectedComida.slice(0, 3).map((comida, index) => (
-          <div  key={comida.id} className='ComidaContainer'>
-          <Col key={index}>
-        
-            <Link className='Link' href={`/comida/${comida.id}`}>
-              <img src={comida.image}  className="ImgScrollingComida" alt={comida.name}/>
-            <div className='ComidaInfo'>
-            <Row>
-              <Col>
-              
-            <h3 className='ComidaName'>{comida.name}</h3>
-
-            <p>Preço: R$ {comida.price}</p>
-            </Col>
-            <Col>
-            <p>Nota: {comida.rating}</p>
-            <p>Tempo de entrega {comida.time}</p>
-           
-            </Col>
-           
-            </Row>
-             </div>
+      <Row className="justify-content-center">
+        {selectedComida.slice(0, 3).map((comida) => (
+          <Col key={comida.id}  md="auto" className="ComidaContainer">
+            <Link className="Link" href={`/comida/${comida.id}`}>
+              <img
+                src={comida.image}
+                alt={comida.name}
+                className="ImgScrollingComida"
+                loading="lazy"
+              />
+              <div className="ComidaInfo">
+                <Row>
+                  <Col>
+                    <h3 className="ComidaName">{comida.name}</h3>
+                    <p>Preço: R$ {comida.price}</p>
+                  </Col>
+                  <Col>
+                    <p>Nota: {comida.rating}</p>
+                    <p>Tempo de entrega: {comida.time}</p>
+                  </Col>
+                </Row>
+              </div>
             </Link>
-       
           </Col>
-          </div>
-
-            
         ))}
       </Row>
     </Container>

@@ -58,11 +58,13 @@ object-position: center;
     margin:auto
 } 
 
-.ComidaContainer{
-background-color: yellow;
-margin:auto;
-margin-bottom: 5vh;
-width:auto;
+.ComidaContainer {
+  background-color: yellow;
+  margin: 0 auto 5vh auto; /* centraliza horizontalmente */
+  width: fit-content; /* ou uma largura fixa como 80%, 400px etc */
+  padding: 1rem;
+  border-radius: 10px;
+  display: block; /* garante centralização com margin auto */
 }
 
 .ComidaName{
@@ -101,7 +103,7 @@ width:auto;
 }
 
 .ImgScrollingRestauranteName{
-  margin-right:1vh;
+margin-left:-3vw;
 text-align: center;
 }
 
