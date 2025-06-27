@@ -21,7 +21,7 @@ export default function Comidas() {
 
   return (
     <Container>
-      <h1>Recomendado</h1>
+      <h1>Recomendação da Semana</h1>
       <Row className="justify-content-center">
         {selectedComida.slice(0, 3).map((comida) => (
           <Col key={comida.id}  md="auto" className="ComidaContainer">

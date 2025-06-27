@@ -23,7 +23,7 @@ const router = useRouter();
 
    return (
     <Container>
-      <h1>Recomendado</h1>
+      <h1>Restaurantes Recomendados</h1>
       <Row>
         {selectedRestaurante.slice(0, 3).map((restaurante, index) => (
           <Col key={index}>
