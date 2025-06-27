@@ -7,6 +7,8 @@ import Title from "@/components/Title";
 import { useParams } from 'next/navigation';
 import { useEffect, useState } from 'react';
 
+
+
 export default function DetalhesComida() {
   const { id } = useParams();
   const [comida, setComida] = useState(null);
@@ -21,7 +23,7 @@ export default function DetalhesComida() {
 
     return (
     
-    <div>
+    <div className='ComidaContainer'> 
       <Container>
         <Title />
       <img src={comida.image} alt={comida.name} />
@@ -40,6 +42,7 @@ export default function DetalhesComida() {
       <p >Nota: {comida.rating}</p>
       </div>
       <p>Tempo de entrega: {comida.time}</p>
+      
       </Col>
       </Row>
       </Container>
