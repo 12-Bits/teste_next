@@ -1,7 +1,11 @@
-body{
-    background-color: rgba(255, 196, 0, 0.61);
-    padding: 1vw;
-}
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: rgba(255, 196, 0, 0.61);
+            padding: 1vw;
+            margin: 0; /* Ensure no default body margin */
+        }
 
 
 .container {
@@ -125,4 +129,40 @@ font-weight: bolder;
 .Title{
   text-align: center;
   font-weight: bold;
+}
+
+.PaginaCentro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 0;
+  text-align: center;
+}
+
+.ImagemComidaContainer {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.ImagemComida {
+  width: 80vw;
+  max-width: 400px;
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+/* Mantém os detalhes mais compactos e centralizados */
+.DetalhesRow {
+  justify-content: center;
+  align-items: flex-start;
+  gap: 2rem;
+  text-align: left;
+}
+
+.ComidaDetails1,
+.ComidaDetails2 {
+  max-width: 400px;
 }

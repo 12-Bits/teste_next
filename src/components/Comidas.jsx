@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { Container, Row, Col } from 'react-bootstrap';
 import { useRouter } from 'next/navigation';
@@ -8,6 +8,7 @@ import { useRouter } from 'next/navigation';
 export default function Comidas() {
   const [selectedComida, setSelectedComida] = useState([]);
   const router = useRouter();
+  const scrollRef = useRef(null);
 
   useEffect(() => {
     fetch("https://apifakedelivery.vercel.app/foods")
@@ -15,22 +16,69 @@ export default function Comidas() {
       .then((data) => setSelectedComida(data));
   }, []);
 
-  const irParaDetalhes = (id) => {
-    router.push(`/comida/${id}`);
-  };
+  // Drag scroll logic
+  useEffect(() => {
+    const scroll = scrollRef.current;
+    if (!scroll) return;
+
+    let isDown = false;
+    let startX;
+    let scrollLeft;
+
+    const handleMouseDown = (e) => {
+      isDown = true;
+      scroll.classList.add('active');
+      startX = e.pageX - scroll.offsetLeft;
+      scrollLeft = scroll.scrollLeft;
+    };
+
+    const handleMouseLeave = () => {
+      isDown = false;
+      scroll.classList.remove('active');
+    };
+
+    const handleMouseUp = () => {
+      isDown = false;
+      scroll.classList.remove('active');
+    };
+
+    const handleMouseMove = (e) => {
+      if (!isDown) return;
+      e.preventDefault();
+      const x = e.pageX - scroll.offsetLeft;
+      const walk = (x - startX) * 2; // velocidade do scroll
+      scroll.scrollLeft = scrollLeft - walk;
+    };
+
+    scroll.addEventListener('mousedown', handleMouseDown);
+    scroll.addEventListener('mouseleave', handleMouseLeave);
+    scroll.addEventListener('mouseup', handleMouseUp);
+    scroll.addEventListener('mousemove', handleMouseMove);
+
+    return () => {
+      scroll.removeEventListener('mousedown', handleMouseDown);
+      scroll.removeEventListener('mouseleave', handleMouseLeave);
+      scroll.removeEventListener('mouseup', handleMouseUp);
+      scroll.removeEventListener('mousemove', handleMouseMove);
+    };
+  }, []);
 
   return (
     <Container>
       <h1>Recomendação da Semana</h1>
-      <Row className="justify-content-center">
-        {selectedComida.slice(0, 3).map((comida) => (
-          <Col key={comida.id}  md="auto" className="ComidaContainer">
+      <div className="scroll-container" ref={scrollRef}>
+        {selectedComida.slice(0, 10).map((comida) => (
+          <div key={comida.id} className="ComidaScrollItem">
             <Link className="Link" href={`/comida/${comida.id}`}>
               <img
-                src={comida.image}
+                src={comida.image || '/MissingIMG.png'}
                 alt={comida.name}
                 className="ImgScrollingComida"
                 loading="lazy"
+                onError={(e) => {
+                e.target.onerror = null; // evita loop
+                e.target.src = '/MissingIMG.png'; // imagem padrão
+  }}
               />
               <div className="ComidaInfo">
                 <Row>
@@ -45,9 +93,9 @@ export default function Comidas() {
                 </Row>
               </div>
             </Link>
-          </Col>
+          </div>
         ))}
-      </Row>
+      </div>
     </Container>
   );
 }

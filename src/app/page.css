@@ -1,119 +1,172 @@
-body{
-    background-color: rgba(255, 196, 0, 0.61);
-    padding: 1vw;
-}
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
 
-.container {
-    width:100%;
-    margin: 0 auto;
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: rgba(255, 196, 0, 0.61);
+            padding: 1vw;
+            margin: 0; /* Ensure no default body margin */
+        }
 
-    padding-bottom: 0%;
-}
+        .container-wrapper {
+            width: 100%;
+            margin: 0 auto;
+            padding-bottom: 0%;
+        }
 
-.row {
-    width:100%;
-    margin-bottom:10px;
+        .row {
+            width: 100%;
+            margin-bottom: 10px;
+            height: auto;
+        }
 
-    height: auto;
-}
+        /*MAIN PAGE START*/
 
+        .Title {
+            text-align: center;
+            font-weight: bold;
+        }
 
-/*MAIN PAGE START*/
+        #Subtitulo {
+            font-size: 3vw;
+            padding-left: 5vw;
+        }
 
-.Title{
-  text-align: center;
-  font-weight: bold;
-}
+        .Ad-Image {
+            width: 70vh;
+            height: 20vh;
+            border-radius: 10px;
+            display: block;
+            margin: auto;
+        }
 
-#Subtitulo{
-    font-size: 3vw;
-    padding-left: 5vw;
-} 
+        .Ad-container {
+            text-align: center;
+            margin: 20px;
+            object-position: center;
+        }
 
-.Ad-Image{
-  width: 70vh;
-  height: 20vh;
-  border-radius: 10px;
-  display: block;
-  margin: auto;
-}
+        /*MAIN PAGE END*/
 
-.Ad-container{
-  text-align: center;
-  margin: 20px;
-object-position: center;
-}   
+        /*COMIDA START*/
+        #Comidas {
+            padding-top: 10vh;
+            align-items: center;
+        }
 
-/*MAIN PAGE END*/
+        .ImgScrollingComida {
+            border-style: solid;
+            border-radius: 5vh;
+            margin: auto;
+        }
 
-/*COMIDA START*/
-#Comidas{
-    padding-top: 10vh;
-    align-items: center;
-}
+        .ComidaContainer {
+            background-color: yellow;
+            margin: 0 auto 5vh auto;
+            width: fit-content;
+            padding: 1rem;
+            border-radius: 10px;
+            display: block;
+        }
 
-.ImgScrollingComida{
-    border-style: solid;
-    border-radius: 5vh;
-    margin:auto
-} 
+        .ComidaName {
+            margin-bottom: 5vh;
+            font-weight: bolder;
+            color: red;
+            font-size: 1.5rem;
+        }
 
-.ComidaContainer {
-  background-color: yellow;
-  margin: 0 auto 5vh auto; /* centraliza horizontalmente */
-  width: fit-content; /* ou uma largura fixa como 80%, 400px etc */
-  padding: 1rem;
-  border-radius: 10px;
-  display: block; /* garante centralização com margin auto */
-}
+        .ComidaScrollItem {
+            margin-left: 3vw;
+            background-color: white;
+        }
 
-.ComidaName{
-  margin-bottom: 5vh;
-  font-weight: bolder;
-  color:red;
-  font-size: 1.5rem;
+        .ComidaInfo {
+            margin-top: 3vh;
+            font-weight: bold;
+        }
 
-}
+        .ImgScrollingComida {
+            width: 400px;
+            height: 200px;
+        }
 
-.ComidaInfo{
-  margin-top: 3vh;
-  font-weight: bold;
+        .Link {
+            text-decoration: none;
+            color: black;
+        }
 
-}
+        /* Common scroll-container styles for both sections */
+        .scroll-container {
+            display: flex;
+            overflow-x: auto;
+            gap: 1rem; /* Default gap for comida */
+            padding: 1rem 0;
+            scrollbar-width: none; /* Firefox */
+            -ms-overflow-style: none; /* IE e Edge */
+            cursor: grab; /* Adicionado de volta para indicar arrasto */
+        }
+        .scroll-container.active {
+            cursor: grabbing; /* Adicionado de volta para indicar arrasto ativo */
+        }
 
-.ImgScrollingComida{
-    width: 400px;
-    height: 200px;
-}
+        .scroll-container::-webkit-scrollbar {
+            display: none; /* Chrome, Safari e Opera */
+        }
 
-.Link{
-  text-decoration: none;
-  color: black;
-}
+        /* Specific styles for ComidaScrollItem */
+        .ComidaScrollItem {
+            flex: 0 0 auto; /* Garantir que os itens não encolham */
+            width: 300px;
+            scroll-snap-align: start;
+            user-select: none;
+        }
 
-/*COMIDA END*/
+        /*COMIDA END*/
 
-/*RESTAURANTE START*/
-.ImgScrollingRestaurante{
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  margin-left: 6vw;
+        /*RESTAURANTE START*/
+#Restaurante {
 
-}
+            align-items: center;
+        }
+        .SubtituloRestaurante {
+            font-size: 2rem;
+            padding-left: 5vw;
+            margin-bottom: 1rem; /* Added margin for spacing */
+        }
 
-.ImgScrollingRestauranteName{
-margin-left:-3vw;
-text-align: center;
-}
+        /* Override scroll-container gap for Restaurantes */
+        .Restaurantes-scroll-container {
+            gap: 2rem; /* Specific gap for restaurantes */
+        }
 
-#RestauranteNome{
-  font-size: 0.8rem;
-  font-weight: bolder;
-  text-align: center;
-}
+        .RestauranteScrollItem {
+            flex: 0 0 auto; /* Garantir que os itens não encolham */
+            width: 120px;
+            scroll-snap-align: start;
+            margin: auto;
+        }
 
-.SubtituloRestaurante{
-    font-size:2rem;
-    padding-left: 5vw;
-}
+        .RestauranteItemContent {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .ImgScrollingRestaurante {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover; /* Ensure images fill the circular space */
+            margin: 0 auto;
+        }
+
+        .ImgScrollingRestauranteName {
+            font-weight: bold;
+            margin-top: 0.5rem;
+            font-size: 0.9rem; /* Adjusted font size for better fit */
+            white-space: nowrap; /* Prevent name from wrapping */
+            overflow: hidden; /* Hide overflow text */
+            text-overflow: ellipsis; /* Add ellipsis for overflow text */
+            max-width: 100%; /* Ensure text doesn't push container */
+        }

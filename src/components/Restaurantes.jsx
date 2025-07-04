@@ -1,13 +1,14 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
-import { Container, Row, Col } from 'react-bootstrap';
+import { Container } from 'react-bootstrap';
 import { useRouter } from 'next/navigation';
 
-export default function Restaurantes(){
 
-const [selectedRestaurante, setSelectedRestaurante] = useState([]);
+export default function Restaurantes() {
+  const [selectedRestaurante, setSelectedRestaurante] = useState([]);
+  const router = useRouter();
 
   useEffect(() => {
     fetch("https://apifakedelivery.vercel.app/restaurants")
@@ -15,25 +16,34 @@ const [selectedRestaurante, setSelectedRestaurante] = useState([]);
       .then((data) => setSelectedRestaurante(data));
   }, []);
 
-const router = useRouter();
+  
+ 
 
-  const irParaDetalhes = (id) => {
-    router.push(`/restaurante/${id}`);
-  };
-
-   return (
+  return (
     <Container>
-      <h1>Restaurantes Recomendados</h1>
-      <Row>
-        {selectedRestaurante.slice(0, 3).map((restaurante, index) => (
-          <Col key={index}>
-            <Link className='Link' href={`/restaurante/${restaurante.id}`}>
-              <img src={restaurante.image} className="ImgScrollingRestaurante" alt={restaurante.name} />
-              <p className="ImgScrollingRestauranteName">{restaurante.name}</p>
+      <h1 className="SubtituloRestaurante">Restaurantes Recomendados</h1>
+      <div className="scroll-container">
+        {selectedRestaurante.map((restaurante, index) => (
+          <div key={index} className="RestauranteScrollItem">
+            <Link className="Link" href={`/restaurante/${restaurante.id}`}>
+              <div className="RestauranteItemContent">
+                <img
+                  src={restaurante.image || '/placeholder.png'}
+                  alt={restaurante.name}
+                  className="ImgScrollingRestaurante"
+                  onError={(e) => {
+                    e.target.onerror = null;
+                    e.target.src = '/placeholder.png';
+                  }}
+                />
+                <p className="ImgScrollingRestauranteName">
+                  {restaurante.name}
+                </p>
+              </div>
             </Link>
-          </Col>
+          </div>
         ))}
-      </Row>
+      </div>
     </Container>
   );
 }
