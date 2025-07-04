@@ -33,6 +33,7 @@ export default function DetalhesComida() {
       <h1 className='ComidaName'>{comida.name}</h1>
       <p>Preço: R$ {comida.price}</p>
       <p>{comida.description}</p>
+      {/*Restaurante Name and Logo*/}
 
       </Col>
     
