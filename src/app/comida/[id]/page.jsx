@@ -47,6 +47,8 @@ export default function DetalhesComida() {
             </div>
             <p>Tempo de entrega: {comida.time}</p>
             <p>Preço da entrega: R$ {comida.delivery}</p>
+            <img className="RestauranteIcon" src="https://media-cdn.tripadvisor.com/media/photo-s/14/2c/db/e6/logo.jpg" alt="Ícone de comida" />
+            <p className="RestauranteName">Xis do Vini (baked)</p>
           </Col>
         </Row>
       </Container>
