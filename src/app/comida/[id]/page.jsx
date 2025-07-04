@@ -5,8 +5,6 @@ import Title from "@/components/Title";
 import { useParams } from 'next/navigation';
 import { useEffect, useState } from 'react';
 
-
-
 export default function DetalhesComida() {
   const { id } = useParams();
   const [comida, setComida] = useState(null);
@@ -19,42 +17,40 @@ export default function DetalhesComida() {
 
   if (!comida) return <p>Carregando...</p>;
 
-    return (
-    
-<div className="PaginaCentro">
-  <Container>
-    <Title />
-    <div className="ImagemComidaContainer">
-                    <img
-                src={comida.image || '/MissingIMG.png'}
-                alt={comida.name}
-                className="ImgScrollingComida"
-                loading="lazy"
-                onError={(e) => {
-                e.target.onerror = null; // evita loop
-                e.target.src = '/MissingIMG.png'; // imagem padrão
-  }}
-              />
-    </div>
-    <Row className="DetalhesRow">
-      <Col className="ComidaDetails1">
-        <h1 className="ComidaName">{comida.name}</h1>
-        <p>Preço: R$ {comida.price}</p>
-        <p>{comida.description}</p>
-      </Col>
+  return (
+    <div>
+      <Title />
+    <div className="PaginaCentro">
+      <Container>
 
-      <Col className="ComidaDetails2">
-        <button className="ComprarButton" onClick={() => alert("Compra realizada com sucesso!")}>Comprar</button>
-        <div className="SecondDivision">
-          <p>Nota: {comida.rating}</p>
+        <div className="ImagemComidaContainer">
+          <img className="ImagemComida" src={comida.image || '/placeholder.png'} alt={comida.name} 
+            onError={(e) => {
+              e.target.onerror = null;
+              e.target.src = '/MissingIMG.png';
+            }}
+          />
         </div>
-        <p>Tempo de entrega: {comida.time}</p>
-      </Col>
-    </Row>
-  </Container>
-</div>
+        <Row className="DetalhesRow">
+          <Col className="ComidaDetails1">
+            <h1 className="ComidaName">{comida.name}</h1>
+            <p>Preço: R$ {comida.price}</p>
+            <p>{comida.description}</p>
+          </Col>
+
+          <Col className="ComidaDetails2">
+            <button className="ComprarButton" onClick={() => alert("Compra realizada com sucesso!")}>
+              Comprar
+            </button>
+            <div className="SecondDivision">
+              <p>Nota: {comida.rating}</p>
+            </div>
+            <p>Tempo de entrega: {comida.time}</p>
+            <p>Preço da entrega: R$ {comida.delivery}</p>
+          </Col>
+        </Row>
+      </Container>
+    </div>
+    </div>
   );
 }
-
-
-

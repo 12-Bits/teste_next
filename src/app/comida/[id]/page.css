@@ -115,6 +115,7 @@ font-weight: bolder;
   align-items: flex-start;
   gap: 2rem;
   text-align: left;
+  background-color: white;
 }
 
 .ComidaDetails1,

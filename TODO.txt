@@ -1,4 +1,3 @@
-Add scrolling Food
 Show Restaurant in Food pages
 Add Food to Restaurant pages
-Fix Responsability
+
