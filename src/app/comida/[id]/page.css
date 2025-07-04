@@ -1,3 +1,4 @@
+<<<<<<< HEAD
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
 
         body {
@@ -6,11 +7,16 @@
             padding: 1vw;
             margin: 0; /* Ensure no default body margin */
         }
+=======
+body{
+    background-color: white;
+    padding: 1vw;
+}
+>>>>>>> a4fcf83e9eb51db5f4c70b2fcaad0809b4498786
 
 
 .container {
     width:100%;
-    margin: 0 auto;
     padding:10px;
     padding-bottom: 0%;
 }
@@ -25,6 +31,13 @@
   border-radius: 20px;
 }
 
+.ComidaContainer{
+font-size: large;
+font-weight: bold;
+color:black;
+
+}
+
 .row {
     width:100%;
     margin-bottom:10px;
@@ -36,17 +49,11 @@
   padding-top: 5vh;
 }
 
-#Comidas{
-    padding-top: 10vh;
-}
 
-.ImgScrollingComida{
-    border-style: solid;
-    border-radius: 5vh;
-} 
+
 
 .ComidaInfo{
-  margin-bottom: 5vh;
+margin-bottom: 5vh;
 width: 100%;
 }
 .ComidaName{
@@ -58,56 +65,11 @@ width: 100%;
 
 }
 
-.ImgScrollingComida{
-    width: 400px;
-    height: 200px;
-}
 
 .Link{
   text-decoration: none;
   color: black;
 }
-
-
-
-.ComidaNome{
-  font-size: 1rem;
-}
-
-.ImgScrollingRestaurante{
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  margin-left: 6vw;
-
-}
-
-.ImgScrollingRestauranteName{
-  margin-right:1vh;
-text-align: center;
-
-}
-
-
-
-#RestauranteNome{
-  font-size: 0.8rem;
-  font-weight: bolder;
-  text-align: center;
-}
-.Ad-Image{
-  width: 80vw;
-  height: 20vh;
-  border-radius: 10px;
-    display: block;
-  margin: auto;
-}
-.Ad-container{
-  text-align: center;
-  margin: 20px;
-object-position: center;
-
-}   
 
 
 #Titulo{

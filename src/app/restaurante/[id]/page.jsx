@@ -35,6 +35,7 @@ export default function DetalhesRestaurante() {
     
       
       </Row>
+      {/*Restaurant Foods (New fetch)*/}
       </Container>
     </div>
   );

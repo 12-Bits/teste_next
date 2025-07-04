@@ -1,3 +1,4 @@
+<<<<<<< HEAD
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
 
         body {
@@ -6,6 +7,12 @@
             padding: 1vw;
             margin: 0; /* Ensure no default body margin */
         }
+=======
+body{
+    background-color: rgb(255, 255, 255);
+    padding: 1vw;
+}
+>>>>>>> a4fcf83e9eb51db5f4c70b2fcaad0809b4498786
 
 
 .container {
